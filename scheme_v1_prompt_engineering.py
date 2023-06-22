@@ -17,7 +17,7 @@ prompts = json.load(open('data/prompts.json'))
 
 async def load_scheme_name_disambiguation_prompt_myscheme(db_obj) -> str:
     """
-    Loads the prompt for mapping the user query to  one of the supported scheme names
+    Loads the prompt for mapping the user query to one of the supported scheme names
     """
     all_scheme_names = await db_obj.get_all_scheme_names_myscheme()
     scheme_name_disambiguation = prompts['scheme_name_disambiguation']
@@ -27,7 +27,7 @@ async def load_scheme_name_disambiguation_prompt_myscheme(db_obj) -> str:
 
 async def load_information_extraction_prompt(db_obj) -> str:
     """
-    Loads the prompt for mapping the user query to  one of the supported scheme names
+    Loads the prompt for mapping the user query to one of the supported scheme names
     """
     user_information_extraction_prompt = prompts['user_information_extraction']
     return user_information_extraction_prompt

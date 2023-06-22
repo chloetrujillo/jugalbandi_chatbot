@@ -16,9 +16,10 @@ from wasabi import msg
 from dotenv import load_dotenv
 load_dotenv()
 
-app = FastAPI(title='JugalBandi API')
+app = FastAPI(title='IBJ API')
 language_options = {'English': 'en', 'हिन्दी': 'hi', 'বাংলা': 'bn', 'தமிழ்': 'ta', 'తెలుగు': 'te', 'ਪੰਜਾਬੀ': 'pa'}
-greeting_messages = {'en': "Now please ask your question either by typing it or by recording it in a voice note",
+##########these need to be updated
+greeting_messages = {'en': "Now please ask your question.",
                      'hi': "अब कृपया अपना प्रश्न टाइप करके या ध्वनि नोट में रिकॉर्ड करके पूछें",
                      'bn': "এখন টাইপ করে অথবা ভয়েস নোটে রেকর্ড করে আপনার প্রশ্ন জিজ্ঞাসা করুন",
                      'ta': "இப்போது உங்கள் கேள்வியை தட்டச்சு செய்வதன் மூலமாகவோ அல்லது குரல் குறிப்பில் பதிவு செய்வதன் மூலமாகவோ கேட்கவும்",

@@ -17,7 +17,7 @@ from translator import translator
 async def chatbot_flow(db_object, chat_id, message, message_type, acknowledgements):
     date = datetime.datetime.now(pytz.UTC)
     user_regional_lang_text = None
-    response = 'We are facing some issues, we will fix it soon'
+    response = 'Sorry, we are facing some issues, we will fix it soon.'
     stt_success = False
     davinci_success = False
     bot_success = False

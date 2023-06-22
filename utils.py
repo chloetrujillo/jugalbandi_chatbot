@@ -41,3 +41,31 @@ def mask_sensitive_info(user_input):
     # user_input = address_regex.sub('XXX XXX', user_input)
     # Return the masked string
     return user_input
+
+
+## Function which finds matches in a case database. ideally done with API call later.
+def search_cases(attributes, case_list):
+    relevant_cases_list = []
+
+    for case in case_list:
+        if case_matches_attributes(case, attributes):
+            relevant_cases_list.append(case)
+
+    return relevant_cases_list
+
+## Helper function to identify if match exists or not
+def case_matches_attributes(case, attributes):
+    for key, value in attributes.items():
+        if key not in case:
+            continue  # only attributes in attributes AND case dictionaries are considered
+
+        case_value = case[key]
+
+        if isinstance(value, list):
+            if not any(v in case_value for v in value):
+                return False  # Case value doesn't match any of the specified values in the list
+        elif case_value != value:
+            return False  # Case value doesn't match the specified value
+
+    return True  # All attributes match the case, return True
+
